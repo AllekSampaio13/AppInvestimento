@@ -32,11 +32,11 @@ public class AcoesController : Controller
 
     [HttpGet]
     [Route("nome")]
-    public async Task<IActionResult> BuscarAcoesNome(string Nome)
+    public async Task<IActionResult> BuscarAcoesNome(string nome)
     {
-        var acoes = await _acoesAppService.BuscarAcoesNome(Nome);
+        var acoes = await _acoesAppService.BuscarAcoesNome(nome);
         if (acoes == null) return NotFound("Ação não encontrada!");
-        return Ok(await _acoesAppService.BuscarAcoesNome(Nome));
+        return Ok(await _acoesAppService.BuscarAcoesNome(nome));
     }
 
     [HttpPost]
@@ -64,4 +64,5 @@ public class AcoesController : Controller
         if (result) return Ok();
         return NotFound();
     }
+
 }

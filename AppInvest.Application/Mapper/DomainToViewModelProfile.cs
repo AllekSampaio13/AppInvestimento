@@ -11,6 +11,7 @@ namespace AppInvest.Application.Mapper
         public DomainToViewModelProfile()
         {
             CreateMap<Acoes, AcoesViewModel>();
+            CreateMap<UsuariosInvest, UsuariosViewModel>();
         }
 
     }

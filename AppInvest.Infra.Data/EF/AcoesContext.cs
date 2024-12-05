@@ -25,9 +25,11 @@ namespace AppInvest.Infra.Data.EF
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new AcoesMapping());
+            modelBuilder.ApplyConfiguration(new UsuariosMapping());
 
         }
         public DbSet<Acoes> Acoes { get; set; }
+        public DbSet<UsuariosInvest> UsuariosInvest { get; set; }
     }
 }
 

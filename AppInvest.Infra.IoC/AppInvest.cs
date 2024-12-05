@@ -8,33 +8,35 @@ using AppInvest.Infra.Data.Repositories;
 using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
 
-    namespace AppInvest.Infra.IoC
+    namespace AppInvest.Infra.IoC;
+
+    public static class AcoesModule
     {
-        public static class AcoesModule
+        private static void ConfigureMapper(this IServiceCollection services)
         {
-            private static void ConfigureMapper(this IServiceCollection services)
+            var mapperConfig = new MapperConfiguration(mc =>
             {
-                var mapperConfig = new MapperConfiguration(mc =>
-                {
-                    mc.AddProfile(new DomainToViewModelProfile());
-                });
+                mc.AddProfile(new DomainToViewModelProfile());
+            });
 
-                services.AddSingleton(mapperConfig.CreateMapper());
-            }
-            public static IServiceCollection ConfigureDependencies(this IServiceCollection services)
-            {
-                services.ConfigureMapper();
+            services.AddSingleton(mapperConfig.CreateMapper());
+        }
+        public static IServiceCollection ConfigureDependencies(this IServiceCollection services)
+        {
+            services.ConfigureMapper();
 
-                return services;
-            }
+            return services;
+        }
 
-            public static IServiceCollection ConfigureApplicationServices(this IServiceCollection services)
-            {
-                services.AddScoped<IAcoesAppService, AcoesAppService>();
-                services.AddScoped<IAcoesService, AcoesService>();
-                services.AddScoped<IAcoesRepository, AcoesRepository>();
+        public static IServiceCollection ConfigureApplicationServices(this IServiceCollection services)
+        {
+            services.AddScoped<IAcoesAppService, AcoesAppService>();
+            services.AddScoped<IAcoesService, AcoesService>();
+            services.AddScoped<IAcoesRepository, AcoesRepository>();
+            services.AddScoped<IUsuariosAppService, UsuariosAppService>();
+            services.AddScoped<IUsuariosService, UsuariosService>();
+            services.AddScoped<IUsuariosRepository, UsuariosRepository>();
 
-                return services;
-            }
+        return services;
         }
     }
