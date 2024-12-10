@@ -26,6 +26,14 @@ namespace AppInvest.Domain.Services
 
         public async Task<UsuariosInvest> CadastrarUsuarios(UsuariosInvest usuarios)
         {
+            var verificaEmail = await _usuariosRepository.Get(x => x.Email == usuarios.Email);
+
+            if (verificaEmail != null)
+            {
+                if (usuarios.Nome == verificaEmail.Nome && usuarios.Email == verificaEmail.Email)
+                    throw new Exception("Email já cadastrado");
+            }
+
             await _usuariosRepository.CadastrarUsuarios(usuarios);
             await _usuariosRepository.UnitOfWork.SaveChangesAsync();
 

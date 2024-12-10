@@ -51,4 +51,7 @@ public class UsuariosRepository : BaseRepository<UsuariosInvest>, IUsuariosRepos
     {
         throw new NotImplementedException();
     }
+
+
+
 }

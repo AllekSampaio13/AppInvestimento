@@ -2,6 +2,7 @@
 using AppInvest.Application.ViewModel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace AppInvest.Controllers;
 

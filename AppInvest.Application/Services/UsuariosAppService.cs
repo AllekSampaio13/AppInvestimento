@@ -32,6 +32,13 @@ public class UsuariosAppService : IUsuariosAppService
 
     public async Task<UsuariosViewModel> CadastrarUsuarios(NovoUsuariosViewModel novoUsuariosViewModel)
     {
+
+        if (!Util.Util.ValidarEmail(novoUsuariosViewModel.Email))
+        {
+            throw new Exception("Email errado");
+
+        }
+
         var novoUsuarios = new UsuariosInvest(novoUsuariosViewModel.Nome,
             novoUsuariosViewModel.Email);
 
