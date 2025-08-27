@@ -12,8 +12,9 @@ API desenvolvida em **.NET (C#)** utilizando **Entity Framework Core** e **SQL S
 
 📂 Estrutura do Projeto
 src/
- ├── Project.API           → Controllers e Configurações da API
- ├── Project.Application   → Casos de uso, DTOs, Services, Interfaces
- ├── Project.Domain        → Entidades e Interfaces de Repositório
- ├── Project.Infra.Data    → Contexto EF Core, Mapeamentos, Repositórios
- ├── Project.Infra.IoC     → Configurações de Injeção de Dependência
+   Project.API          Controllers e Configurações da API
+   Project.Application  Casos de uso, DTOs, Services, Interfaces
+   Project.Domain       Entidades e Interfaces de Repositório
+   Project.Infra.Data   Contexto EF Core, Mapeamentos, Repositórios
+   Project.Infra.IoC    Configurações de Injeção de Dependencia
+
