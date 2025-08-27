@@ -8,13 +8,13 @@ API desenvolvida em **.NET (C#)** utilizando **Entity Framework Core** e **SQL S
 - **SQL Server** (Banco de Dados Relacional)
 - **Swagger** (Documentação da API)
 - **Dependency Injection (IoC)**
-- **AutoMapper** (se aplicável)
+- **AutoMapper**
 
-📂 Estrutura do Projeto
-src/
-   Project.API          Controllers e Configurações da API
-   Project.Application  Casos de uso, DTOs, Services, Interfaces
-   Project.Domain       Entidades e Interfaces de Repositório
-   Project.Infra.Data   Contexto EF Core, Mapeamentos, Repositórios
-   Project.Infra.IoC    Configurações de Injeção de Dependencia
+📂 Estrutura do Projeto <br>
 
+src/ <br>
+ ├── Project.API           → Controllers e Configurações da API <br>
+ ├── Project.Application   → Casos de uso, DTOs, Services <br>
+ ├── Project.Domain        → Entidades e Interfaces de Repositório <br>
+ ├── Project.Infra.Data    → Contexto EF Core, Mapeamentos, Repositórios <br>
+ ├── Project.Infra.IoC     → Configurações de Injeção de Dependência <br>
